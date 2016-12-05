@@ -1,0 +1,44 @@
+/*
+Theme Name:     F5 Sites -Storefront Child
+Theme URI:      http://f5sites.com
+Description:    Custom adaptation for project need
+Author:         Francisco Matelli Matulovic
+Author URI:     http://franciscomat.com
+Template:       storefront
+Version:        0.1
+*/
+
+@import url("../storefront/style.css");
+
+#colophon {
+	background-color: #000;
+	padding-bottom: 0;
+	border-bottom: 0;
+}
+#colophon .widget-title {
+	margin-bottom: 0.2em !important;
+	padding-bottom: 0.2em !important;
+}
+#colophon>div {
+	background: url('footerbgt.png') no-repeat;
+	height: 400px;
+}
+#colophon>p {
+	text-align: center;
+}
+#colophon a {
+	text-align: center;
+	color: #AAA;
+}
+#colophon a:hover {
+	color: #FFF;
+}
+.footer-widgets > div {
+	background: rgba(255,255,255,0.6);
+	border-radius: 20px;
+	color: #000;
+	padding: 10px;
+}
+.footer-widgets > div > div {
+	margin-bottom: 20px;
+}
