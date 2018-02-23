@@ -1,14 +1,14 @@
 /*
 Theme Name:     F5 Sites -Storefront Child
-Theme URI:      http://f5sites.com
+Theme URI:      https://www.f5sites.com
 Description:    Custom adaptation for project need
 Author:         Francisco Matelli Matulovic
-Author URI:     http://franciscomat.com
+Author URI:     https://www.franciscomat.com
 Template:       storefront
 Version:        0.1
 */
 
-@import url("../storefront/style.css");
+/*@import url("../storefront/style.css");*/
 
 #colophon {
 	background-color: #000;
