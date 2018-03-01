@@ -2,6 +2,8 @@
 
 add_action( 'init', 'your_theme_init' );
 
+
+
 function your_theme_init() {
 	add_shortcode('startups-links', 'startups_link_generate');
 	// Disable nesting check to allow inserted pages within inserted pages.
@@ -9,7 +11,7 @@ function your_theme_init() {
 }
 
 function startups_link_generate($atts) {
-	#$alink;
+	$alink='';
 	
 	if(!isset($atts['title']))
 		$atts['title']="Visitar Site do Projeto";
