@@ -10,6 +10,13 @@ Version:        0.1
 
 /*@import url("../storefront/style.css");*/
 
+/*.type-product {*/
+.attachment-woocommerce_thumbnail, .attachment-shop_catalog {
+	/*border:1px solid #333;*/
+	border:7px solid #EEE;
+}
+
+/**/
 #colophon {
 	background-color: #000;
 	padding-bottom: 0;
