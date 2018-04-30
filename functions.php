@@ -2,7 +2,10 @@
 
 add_action( 'init', 'your_theme_init' );
 
-
+function is_blog() {
+	#
+    return ( is_home() || is_single() || is_category() || is_archive() || is_front_page() || strpos($_SERVER['REQUEST_URI'], "blog") );
+}
 
 function your_theme_init() {
 	add_shortcode('startups-links', 'startups_link_generate');

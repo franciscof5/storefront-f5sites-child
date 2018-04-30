@@ -26,7 +26,7 @@ get_header(); ?>
 	</div><!-- #primary -->
 	<div id="secondary" class="widget-area col-md-3" role="complementary" style="width: 30%;">
 		BLOG
-		<?php the_widget("Recent_Posts_Widget_Extended"); ?>
+		<?php the_widget("Recent_Posts_Widget_Extended", "limit=20"); ?>
 	</div>
 <?php } else { ?>
 
