@@ -49,3 +49,25 @@ Version:        0.1
 .footer-widgets > div > div {
 	margin-bottom: 20px;
 }
+.secondary-navigation, .secondary-navigation a {
+	color: #CCC !important;
+}
+.secondary-navigation li {
+	background: #222;
+}
+.storefront-primary-navigation, .storefront-primary-navigation a {
+	color: #FFF !important;
+	font-weight: 600;
+}
+.storefront-primary-navigation .sub-menu li {
+	background: #222;
+}
+.widget_shopping_cart a {
+	color: #222 !important;
+}
+.woocommerce-mini-cart__buttons a {
+	color: #FFF !important;
+}
+.button, .checkout, .wc-forward {
+	color: #FFF !important;
+}
