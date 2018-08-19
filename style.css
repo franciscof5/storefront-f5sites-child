@@ -71,3 +71,7 @@ Version:        0.1
 .button, .checkout, .wc-forward {
 	color: #FFF !important;
 }
+
+.woocommerce-checkout {
+	color: #222 !important;
+}
