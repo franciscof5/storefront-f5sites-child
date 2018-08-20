@@ -75,3 +75,16 @@ Version:        0.1
 .woocommerce-checkout {
 	color: #222 !important;
 }
+#masthead {
+	background-color: #222;
+}
+.wpcf7-submit {
+	color: #FFF !important;
+}
+.handheld-navigation li {
+	background-color: rgba(0,0,0,0.5);
+	padding-left: 20px;
+}
+.handheld-navigation .dropdown-toggle {
+    color: #fff;
+}
