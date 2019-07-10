@@ -88,9 +88,14 @@ header {
 }
 
 .robot {
-	width: 200px;
+	/*width: 200px;*/
+	width: 30%;
 }
-
+@media only screen and (max-width: 600px) {
+	.robot {
+		width: 60%;
+	}	
+}
 h1 {
 	margin: 0;
 	font-family: 'Londrina Solid', cursive;
