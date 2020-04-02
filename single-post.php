@@ -1,1 +1,1 @@
-/var/www/composer/vendor/wp/wp-content/themes/storefront-f5sites-child/index.php
+/var/www/html/wp-content/themes/storefront-f5sites-child/index.php
