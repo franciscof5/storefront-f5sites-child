@@ -152,6 +152,7 @@ html, body {
 
 h1, h2, h3, h4, h5 {
 	font-family: 'lobster', Arial, Helvetica, sans-serif !important;
+	text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 2px 2px 1px rgba(99,92,206,0);
 }
 
 .credits {
