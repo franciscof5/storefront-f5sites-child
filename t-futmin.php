@@ -1,22 +1,15 @@
 <?php
 /*
 * template name: futmin
- */
-
-#get_header(); ?>
-<?php
-//echo get_bloginfo("stylesheet_directory")."/assets/jquery-3.3.1.min.js";
-wp_enqueue_script("jquery33", get_bloginfo("stylesheet_directory")."/assets/jquery-3.3.1.min.js");
-
-(wp_enqueue_script("artyom-js", get_bloginfo("stylesheet_directory")."/assets/artyom.window.min.js"));
-(wp_enqueue_script("artyom-js"));
+*/
 ?>
-
 
 <html>
 <head>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="<?php echo get_bloginfo('stylesheet_directory')?>/assets/artyom.window.min.js"></script>
+<script src="<?php get_stylesheet_directory_uri()?>/assets/artyom.window.min.js"></script>
+<script src="<?php get_stylesheet_directory_uri()?>/assets/bootstrap.bundle.min.js"></script>
+<link href="<?php echo get_bloginfo( 'stylesheet_directory' ); ?>/assets/bootstrap.min.css" rel="stylesheet">
+
 <script type="text/javascript">
 	//$( document ).ready(function() {
 		var Artyom;
@@ -137,13 +130,16 @@ html, body {
 </style>
 </head>
 <body class="grass">
-	<h1>
-	<?php if(!is_user_logged_in()) {
-		echo "need to login";
-	} else {
-		echo "Welcome";
-	} ?>
-	</h1>
+
+	<div class="col-md-6 offset-md-3 col-sm-12 square-center">
+		<h1>
+		<?php if(!is_user_logged_in()) {
+			wp_login_form();
+		} else {
+			echo "Welcome";
+		} ?>
+		</h1>
+	</div>
 	<div class="credits">
 		Grass CSS https://codepen.io/JoeHastings/pen/wqXdER
 	</div>
@@ -153,6 +149,13 @@ html, body {
 h1, h2, h3, h4, h5 {
 	font-family: 'lobster', Arial, Helvetica, sans-serif !important;
 	text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 2px 2px 1px rgba(99,92,206,0);
+}
+
+.square-center {
+	text-align: center;
+	border-radius: 20px;
+	padding: 30px;
+	background: #FFF;
 }
 
 .credits {
@@ -186,5 +189,6 @@ h1, h2, h3, h4, h5 {
 }
 
 </style>
+
 </body>
 </html>

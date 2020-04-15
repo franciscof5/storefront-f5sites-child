@@ -121,17 +121,6 @@
 </script>
 </head>
 <body>
-<?php
-//echo get_bloginfo("stylesheet_directory")."/assets/jquery-3.3.1.min.js";
-wp_enqueue_script("jquery33", get_bloginfo("stylesheet_directory")."/assets/jquery-3.3.1.min.js");
-
-(wp_enqueue_script("artyom-js", get_bloginfo("stylesheet_directory")."/assets/artyom.window.min.js"));
-(wp_enqueue_script("artyom-js"));
-
-wp_enqueue_script("robot-js", get_bloginfo("stylesheet_directory")."/assets/robot.js");
-wp_enqueue_style("robot-css", get_bloginfo("stylesheet_directory")."/assets/robot.css");
-?>
-	
 
 	<main>
 		<div class="splash">
