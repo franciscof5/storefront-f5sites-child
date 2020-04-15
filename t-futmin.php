@@ -10,9 +10,6 @@ wp_enqueue_script("jquery33", get_bloginfo("stylesheet_directory")."/assets/jque
 
 (wp_enqueue_script("artyom-js", get_bloginfo("stylesheet_directory")."/assets/artyom.window.min.js"));
 (wp_enqueue_script("artyom-js"));
-
-wp_enqueue_script("robot-js", get_bloginfo("stylesheet_directory")."/assets/robot.js");
-wp_enqueue_style("robot-css", get_bloginfo("stylesheet_directory")."/assets/robot.css");
 ?>
 
 
@@ -117,20 +114,44 @@ wp_enqueue_style("robot-css", get_bloginfo("stylesheet_directory")."/assets/robo
 
 	//});
 </script>
+<style type="text/css">
+	
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+@font-face {
+    font-family: 'lobster';
+    src: url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/lobster/lobster_1.3-webfont.eot');
+    src: url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/lobster/lobster_1.3-webfont.eot?#iefix') format('embedded-opentype'),
+         url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/lobster/lobster_1.3-webfont.woff2') format('woff2'),
+         url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/lobster/lobster_1.3-webfont.woff') format('woff'),
+         url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/lobster/lobster_1.3-webfont.ttf') format('truetype'),
+         url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/lobster/lobster_1.3-webfont.svg#lobster_1.3regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+</style>
 </head>
 <body class="grass">
-	
-	<h1>texte</h1>
-
+	<h1>
+	<?php if(!is_user_logged_in()) {
+		echo "need to login";
+	} else {
+		echo "Welcome";
+	} ?>
+	</h1>
 	<div class="credits">
 		Grass CSS https://codepen.io/JoeHastings/pen/wqXdER
 	</div>
 
 <style type="text/css">
 
-html, body {
-	height: 100%;
-	margin: 0;
+h1, h2, h3, h4, h5 {
+	font-family: 'lobster', Arial, Helvetica, sans-serif !important;
 }
 
 .credits {
