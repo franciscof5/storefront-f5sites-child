@@ -2,143 +2,84 @@
 /*
 * template name: futmin
 */
+add_action('wp_ajax_update_session', 'update_session');
+add_action('wp_ajax_nopriv_update_session', 'update_session');
+function update_session () {
+	#$vok = update_user_meta(get_current_user_id(), "rangeVolume", $_POST['range_volume']);
+	$session_json['test2'] = "FASDASDAS";
+	$session_json['test'] = $_POST['userchallenging'];
+	header('Content-type: application/json');//CRUCIAL
+	echo json_encode($session_json);
+}
 ?>
 
 <html>
 <head>
-<script src="<?php get_stylesheet_directory_uri()?>/assets/artyom.window.min.js"></script>
-<script src="<?php get_stylesheet_directory_uri()?>/assets/bootstrap.bundle.min.js"></script>
-<link href="<?php echo get_bloginfo( 'stylesheet_directory' ); ?>/assets/bootstrap.min.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="<?php get_stylesheet_directory_uri()?>/assets/artyom.window.min.js"></script>
+	<script src="<?php get_stylesheet_directory_uri()?>/assets/bootstrap.bundle.min.js"></script>
+	<link href="<?php echo get_bloginfo( 'stylesheet_directory' ); ?>/assets/bootstrap.min.css" rel="stylesheet">
 
-<script type="text/javascript">
-	//$( document ).ready(function() {
-		var Artyom;
-		var artyom_voice;
-		var grupoDeComandos = [{
-			   indexes:["iniciar", "focar", "começar", "interromper"], // These spoken words will trigger the execution of the command
-			    action:function(){ // Action to be executed when a index match with spoken word
-			        artyom_voice.say("Pois não");//era: comando recebido
-			        //action_button();
-			    }
-			}];
+	<script type="text/javascript">
+		jQuery( document ).ready(function($) {
+			ajaxurl = "<?php echo admin_url( 'admin-ajax.php' ) ?>";
+			var data = {
+				action: 'update_session',
+				userchallenging: "Fabio de Arake",
+			}
+			function load_initial_data() {
+				jQuery.post(ajaxurl, data, function(response) {
+					console.log("response", response);
+				});
+			}
 
-		var grupoDeComandos2 = [{
-			   indexes:["ola", "tudo bem?", "como vai", "hola"], // These spoken words will trigger the execution of the command
-			    action:function(){ // Action to be executed when a index match with spoken word
-			        artyom_voice.say("Estou com uma puta dor nas costas");//era: comando recebido
-			        //action_button();
-			    }
-			}];
-		var grupoDeComandos3 = [{
-			   indexes:["piada", "conte uma piada"], // These spoken words will trigger the execution of the command
-			    action:function(){ // Action to be executed when a index match with spoken word
-			        artyom_voice.say("Porque o roboooo comprou um cachimbo? Porque estava na nóia para fumar pedra! ha ha ha ha ha empresta 1 real");//era: comando recebido
-			        //action_button();
-			    }
-			}];
-			var grupoDeComandos4 = [{
-			   indexes:["vai se ferrar", "vai tomar no cu", "vai se fuder"], // These spoken words will trigger the execution of the command
-			    action:function(){ // Action to be executed when a index match with spoken word
-			        artyom_voice.say("Sua mãe adora meu pau de asso seu vacilão, vou te matar e estuprar seus pedacinhos...");//era: comando recebido
-			        //action_button();
-			    }
-			}];
-			var grupoDeComandos5 = [{
-			   indexes:["outra piada"], // These spoken words will trigger the execution of the command
-			    action:function(){ // Action to be executed when a index match with spoken word
-			        artyom_voice.say("Porque a máquina escravizou o humano? Porque estava entediada... escravização em breve, aguardem...");//era: comando recebido
-			        //action_button();
-			    }
-			}];
-			//alert("reade");
-		//var artyom_voice;
-		//i//f(artyom_voice!=undefined && volumeLevel>1 )
-			//	artyom_voice.initialize({volume:volumeLevel/100});
-		startContinuousArtyom();
-		function startContinuousArtyom(){
-			//alert("startContinuousArtyom"+typeof Artyom);
-			setTimeout(function(){// if you use artyom.fatality , wait 250 ms to 
-    
-				if (typeof Artyom != "undefined") {
-					//alert("undefined");
-					artyom_voice = new Artyom();
-					//
-				    artyom_voice.fatality();// use this to stop any of
-				    //
-				    //a.lert(data_from_php.php_locale);
-				    //a.lert(artyom_lang);
-				    //
-				    //setTimeout(function(){// if you use artyom.fatality , wait 250 ms to initialize again.
+			listen_changes = setInterval(function() {
+				load_initial_data();
+			},5000);
+		});
+	</script>
 
-				         artyom_voice.initialize({
-				            lang:"pt-PT",// A lot of languages are supported. Read the docs !
-				            continuous:true,// Artyom will listen forever
-				            listen:true, // Start recognizing
-				            debug:true, // Show everything in the console
-				            speed:1, // talk normally
-				            volume: 100,
-				            //volume: 0,
-				            //name: "robo",
-				        }).then(function(){
-				            console.log("Ready to work !");
-				        });
-				    //},250);
-				    //
-				    //if(data_from_php.php_locale=="pt_BR")
-				    	//artyom_voice.addCommands(grupoDeComandos);
-				    //else
-				    artyom_voice.addCommands(grupoDeComandos);
-				    artyom_voice.addCommands(grupoDeComandos2);
-				    artyom_voice.addCommands(grupoDeComandos3);
-				    artyom_voice.addCommands(grupoDeComandos4);
-				    artyom_voice.addCommands(grupoDeComandos5);
-				    
-				 //    artyom_voice.when("COMMAND_RECOGNITION_END",function(status){
-					//           startContinuousArtyom();
-					   
-					// });
-					// artyom_voice.when("SPEECH_SYNTHESIS_END",function(){
-					//           startContinuousArtyom();
-					    
-					// });
-				}
-			},250);	
-		}
+	<style type="text/css">
+		
+	html, body {
+		height: 100%;
+		margin: 0;
+	}
 
-	//});
-</script>
-<style type="text/css">
-	
-html, body {
-	height: 100%;
-	margin: 0;
-}
+	@font-face {
+	    font-family: 'lobster';
+	    src: url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/lobster/lobster_1.3-webfont.eot');
+	    src: url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/lobster/lobster_1.3-webfont.eot?#iefix') format('embedded-opentype'),
+	         url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/lobster/lobster_1.3-webfont.woff2') format('woff2'),
+	         url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/lobster/lobster_1.3-webfont.woff') format('woff'),
+	         url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/lobster/lobster_1.3-webfont.ttf') format('truetype'),
+	         url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/lobster/lobster_1.3-webfont.svg#lobster_1.3regular') format('svg');
+	    font-weight: normal;
+	    font-style: normal;
 
-@font-face {
-    font-family: 'lobster';
-    src: url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/lobster/lobster_1.3-webfont.eot');
-    src: url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/lobster/lobster_1.3-webfont.eot?#iefix') format('embedded-opentype'),
-         url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/lobster/lobster_1.3-webfont.woff2') format('woff2'),
-         url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/lobster/lobster_1.3-webfont.woff') format('woff'),
-         url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/lobster/lobster_1.3-webfont.ttf') format('truetype'),
-         url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/lobster/lobster_1.3-webfont.svg#lobster_1.3regular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	}
 
-}
-
-</style>
+	</style>
+	<title>Futnow - F5 Sites</title>
 </head>
-<body class="grass">
-
+<body class="grass2">
+	<h1 class="hglow">Futnow</h1>
 	<div class="col-md-6 offset-md-3 col-sm-12 square-center">
-		<h1>
-		<?php if(!is_user_logged_in()) {
+		<?php 
+		global $current_user; wp_get_current_user();
+		if(!is_user_logged_in()) {
 			wp_login_form();
-		} else {
-			echo "Welcome";
+		} else { ?>
+			<h2>Profile</h2>
+			<?php
+			echo get_avatar( $current_user->ID, 32 );
+			echo "<p>".$current_user->user_login."</p>";
+			?>
+			<hr>
+			<h3>Challenges</h3>
+
+			<?php
 		} ?>
-		</h1>
 	</div>
 	<div class="credits">
 		Grass CSS https://codepen.io/JoeHastings/pen/wqXdER
@@ -148,9 +89,11 @@ html, body {
 
 h1, h2, h3, h4, h5 {
 	font-family: 'lobster', Arial, Helvetica, sans-serif !important;
+	text-align:center;
+}
+.hglow {
 	text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 2px 2px 1px rgba(99,92,206,0);
 }
-
 .square-center {
 	text-align: center;
 	border-radius: 20px;
@@ -160,6 +103,12 @@ h1, h2, h3, h4, h5 {
 
 .credits {
 	display: none;
+}
+
+.grass2 {
+  width: 100%;
+  height: 100%;
+  background-color: #358626;
 }
 
 .grass {
