@@ -64,10 +64,10 @@
 				listen_game = setInterval(function() {
 					actual_height = $("#teamPosition").height();
 					random = (((Math.random()*10)-5)*(half_height/40));
-					//console.log("random", random, "new_height", new_height, "gameTimeSeconds", gameTimeSeconds);
 					new_height = actual_height + random;
 
 					if(actual_height<=40) {
+						//DEFENDEU https://fontawesome.com/icons/fist-raised?style=solid
 						$(".gol-modal").show();
 						setTimeout(function() {
 							$(".gol-modal").hide();
