@@ -10,6 +10,10 @@ Version:        0.1
 
 /*@import url("../storefront/style.css");*/
 
+.site-header {
+	z-index: 0 !important;
+}
+
 /*.type-product {*/
 .attachment-woocommerce_thumbnail, .attachment-shop_catalog {
 	/*border:1px solid #333;*/
