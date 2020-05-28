@@ -9,11 +9,35 @@ Version:        0.1
 */
 
 /*@import url("../storefront/style.css");*/
-
+.navbar-f5sites-bar {
+	display: none;
+}
+.site {
+	overflow-y: hidden;
+}
+footer .block {
+	width: 100% !important;
+}
 .site-header {
 	z-index: 0 !important;
 }
-
+@media (min-width: 620px) {
+	.site-branding {
+		width: 320px;
+	}
+}
+.site-header .site-branding img {
+	margin: 0 auto;
+}
+.custom-logo-link {
+	background: rgba(255,255,255,0.8);
+	border-radius: 22px;
+	padding: 10px 30px;
+	transform: skew(-0.025turn);
+}
+.custom-logo-link img {
+	transform: skew(0.025turn);
+}
 /*.type-product {*/
 .attachment-woocommerce_thumbnail, .attachment-shop_catalog {
 	/*border:1px solid #333;*/
