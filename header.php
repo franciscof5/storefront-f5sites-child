@@ -7,6 +7,8 @@
  * @package storefront
  */
 
+global $user_prefered_language_prefix;
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -53,8 +55,8 @@
 	 */
 	do_action( 'storefront_before_content' ); ?>
 
-	<div id="content" class="site-content" tabindex="-1">
-		<div class="col-full">
+	<div id="content" class="site-content content-fluid" tabindex="-1">
+		<div class="col-full row">
 
 		<?php
 		/**

@@ -6,7 +6,8 @@
  *
  * @package storefront
  */
-
+#Startups to Ocean
+#We see our startups, IT products and services, as turtles that have broken out their eggs toward the ocean.
 ?>
 
 		</div><!-- .col-full -->
@@ -29,7 +30,7 @@
 			do_action( 'storefront_footer' ); ?>
 
 		</div><!-- .col-full -->
-		<p> <a href="http://www.f5sites.com/?lang=en_EN" alt="See in english">USA & World (english)</a> | <a href="http://www.f5sites.com/?lang=pt_BR" alt="Site em português do Brasil">Brasil (português)</a> </p>
+		<p> <a href="http://www.f5sites.com/?lang=en_US" alt="See in english">USA & World (english)</a> | <a href="http://www.f5sites.com/?lang=pt_BR" alt="Site em português do Brasil">Brasil (português)</a> </p>
 	</footer><!-- #colophon -->
 
 	<?php do_action( 'storefront_after_footer' ); ?>

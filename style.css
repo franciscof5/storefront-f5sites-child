@@ -8,6 +8,23 @@ Template:       storefront
 Version:        0.1
 */
 
+@font-face {
+    font-family: 'lobster';
+    src: url('fonts/lobster/lobster_1.3-webfont.eot');
+    src: url('fonts/lobster/lobster_1.3-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/lobster/lobster_1.3-webfont.woff2') format('woff2'),
+         url('fonts/lobster/lobster_1.3-webfont.woff') format('woff'),
+         url('fonts/lobster/lobster_1.3-webfont.ttf') format('truetype'),
+         url('fonts/lobster/lobster_1.3-webfont.svg#lobster_1.3regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+h1 {
+	font-family: 'lobster';
+	color: #02659B !important;
+}
 /*@import url("../storefront/style.css");*/
 .navbar-f5sites-bar {
 	display: none;
@@ -28,6 +45,9 @@ footer .block {
 }
 .site-header .site-branding img {
 	margin: 0 auto;
+}
+#masthead {
+	margin-bottom: 0 !important;
 }
 .custom-logo-link {
 	background: rgba(255,255,255,0.8);
@@ -54,11 +74,14 @@ footer .block {
 	margin-bottom: 0.2em !important;
 	padding-bottom: 0.2em !important;
 }
-#colophon>div {
+/*
+#colophon > div {
 	background: url('footerbgt.png') no-repeat;
 	height: 400px;
 }
-#colophon>p {
+*/
+
+#colophon > p {
 	text-align: center;
 }
 #colophon a {
@@ -103,9 +126,9 @@ footer .block {
 .woocommerce-checkout {
 	color: #222 !important;
 }
-#masthead {
+/*#masthead {
 	background-color: #222;
-}
+}*/
 .wpcf7-submit {
 	color: #FFF !important;
 }
@@ -115,4 +138,16 @@ footer .block {
 }
 .handheld-navigation .dropdown-toggle {
     color: #fff;
+}
+
+#customer_details .col-1,
+#customer_details .col-2 {
+	width: 100% !important;
+	max-width: 100% !important;
+}
+
+@media (min-width: 760px) {
+	.secondary-navigation {
+		display: none;
+	}
 }

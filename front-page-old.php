@@ -17,10 +17,26 @@ get_header(); ?>
 	<div id="primary" class="content-area" style="width: 70%;">
 		<main id="main" class="site-main" role="main">
 
-		<?php if ( have_posts() ) :
 
-			get_template_part( 'loop' );
-		endif; ?>
+			<h1>Preços & Planos</h1>
+
+			<p>Soluções completas para projetos.</p>
+
+			<?php 
+			#var_dump($wp_query);die;
+			#force_database_aditional_tables_share($wp_query);
+			echo do_shortcode('[product id="3316"]');
+			echo do_shortcode('[product id="3313"]');
+			echo do_shortcode('[product id="3286"]');
+			echo do_shortcode('[product id="3542"]');
+			echo do_shortcode('[product id="3403"]');
+			echo do_shortcode('[product id="3917"]');
+			#die(); ?>
+
+			<?php #if ( have_posts() ) :
+
+				#get_template_part( 'loop' );
+			#endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
@@ -29,6 +45,7 @@ get_header(); ?>
 		<?php 
 		if(function_exists("smartlang_recent_posts_georefer_widget")) {
 			smartlang_recent_posts_georefer_widget();
+			$user_prefered_language_prefix;
 		}
 		#the_widget("Recent_Posts_Widget_Extended", "limit=20"); 
 		?>

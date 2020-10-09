@@ -35,3 +35,13 @@ function startups_link_generate($atts) {
 
 	return $alink.do_shortcode('[insert page=3614]').do_shortcode('[insert page=4634]').do_shortcode('[insert page=5034]');
 }
+
+register_nav_menus(
+	apply_filters(
+		'storefront_register_nav_menus', array(
+			'primary-en'   => __( 'Primary Menu En', 'storefront' ),
+			'secondary-en' => __( 'Secondary Menu En', 'storefront' ),
+			'handheld-en'  => __( 'Handheld Menu En', 'storefront' ),
+		)
+	)
+);
