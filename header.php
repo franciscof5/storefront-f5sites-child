@@ -56,7 +56,7 @@ global $user_prefered_language_prefix;
 	do_action( 'storefront_before_content' ); ?>
 
 	<div id="content" class="site-content content-fluid" tabindex="-1">
-		<div class="col-full row">
+		<div class="col-full DDDrow">
 
 		<?php
 		/**
