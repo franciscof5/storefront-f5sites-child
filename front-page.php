@@ -18,6 +18,10 @@ get_header(); ?>
 	.col-full {
 		
 	}
+	.cf7sr-g-recaptcha {
+		width: 304px;
+		margin: 0 auto;
+	}
 </style>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main" style="z-index: 0;position: relative;">
