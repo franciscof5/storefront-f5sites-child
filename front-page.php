@@ -58,7 +58,7 @@ get_header(); ?>
 			<div id="produtos" class="col-12">
 				<?php echo do_shortcode('[insert page="3898" display="all"]'); ?>
 			</div>
-			<div id="clientes" class="col-12 bg-sec2">
+			<div id="cases" class="col-12 bg-sec2">
 				<?php echo do_shortcode('[insert page="2701" display="all"]'); ?>
 			</div>
 			<div id="quem-somos" class="col-12">
